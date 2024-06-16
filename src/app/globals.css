@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  width: 100vw;
+  height: 100svh;
+}
+
+/* COLORS */
+.rosa-gradiente {
+  @apply bg-gradient-to-r from-[#FF005D] via-[#D52A8A] to-[#9F38B9];
+}
