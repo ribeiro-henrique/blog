@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import Menino from "@/public/assets/img/menino.jpg";
-import Image from "next/image";
+import CardPost from "@/components/cardpost/cardpost";
 
 export default function Home() {
   return (
@@ -19,40 +19,15 @@ export default function Home() {
       >
         <div className={clsx("h-0.5 w-20", "bg-[#d8c4a6]")} />
       </div>
-      <div
-        className={clsx(
-          "w-full",
-          "flex flex-col items-center justify-center",
-          "px-1",
-          "gap-4"
-        )}
-      >
-        <Image src={Menino} alt="menino lendo" />
-        <div
-          className={clsx(
-            "w-full",
-            "text-balance",
-            "flex justify-center items-center"
-          )}
-        >
-          <h1
-            className={clsx(
-              "text-2xl",
-              "text-neutral-500",
-              "text-center",
-              "font-medium"
-            )}
-          >
-            A terra onde os sonhos se tornam realidade
-          </h1>
-        </div>
-        <span className={clsx("text-zinc-400", "italic")}>21-07-2024</span>
-        <p className={clsx("text-zinc-500", "text-center")}>
-          Bem-vindo à solarenga California. Uma terra repleta de longas praias,
-          ondas perfeitas, natureza estonteante e pessoas extremamente bonitas
-          que sabem como
-        </p>
-      </div>
+      <CardPost
+        img={Menino}
+        alt="menino lendo"
+        title="A Terra onde os sonhos se tornam realidade"
+        dataPost="21-07-2024"
+        description="Bem-vindo à solarenga California. Uma terra repleta de longas praias,
+        ondas perfeitas, natureza estonteante e pessoas extremamente bonitas que
+        sabem como"
+      />
     </div>
   );
 }
