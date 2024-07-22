@@ -39,7 +39,8 @@ export default function CardPost({
             "text-neutral-500",
             "text-center",
             "font-medium",
-            "cursor-pointer"
+            "cursor-pointer",
+            "hover:underline"
           )}
         >
           {title}

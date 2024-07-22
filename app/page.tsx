@@ -1,5 +1,11 @@
 import clsx from "clsx";
+
+//Assets
 import Menino from "@/public/assets/img/menino.jpg";
+import Floresta from "@/public/assets/img/floresta.jpg";
+
+//Components
+import Divider from "@/components/divider/divider";
 import CardPost from "@/components/cardpost/cardpost";
 
 export default function Home() {
@@ -14,11 +20,7 @@ export default function Home() {
       <div className={clsx("flex w-full", "items-center justify-center")}>
         <h1 className={clsx("text-4xl", "text-neutral-500")}>Todos os posts</h1>
       </div>
-      <div
-        className={clsx("flex w-full", "items-center justify-center", "py-7")}
-      >
-        <div className={clsx("h-0.5 w-20", "bg-[#d8c4a6]")} />
-      </div>
+      <Divider />
       <CardPost
         img={Menino}
         alt="menino lendo"
@@ -27,6 +29,15 @@ export default function Home() {
         description="Bem-vindo à solarenga California. Uma terra repleta de longas praias,
         ondas perfeitas, natureza estonteante e pessoas extremamente bonitas que
         sabem como"
+      />
+
+      <Divider />
+      <CardPost
+        img={Floresta}
+        alt="foto da floresta"
+        title="Vista de tirar o fôlego no topo da montanha"
+        dataPost="26-07-2024"
+        description="Este é o lugar onde o seu texto começa. Pode clicar aqui e começar a digitar. Velit sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem ut enim ad"
       />
     </div>
   );
