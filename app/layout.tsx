@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Roboto_Serif } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar/navbar";
+import Footer from "@/components/footer/footer";
 
 const roboto = Roboto_Serif({ subsets: ["latin"] });
 
@@ -20,6 +21,7 @@ export default function RootLayout({
       <body className={roboto.className}>
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

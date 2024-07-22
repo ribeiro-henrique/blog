@@ -26,18 +26,16 @@ export default function Home() {
         alt="menino lendo"
         title="A Terra onde os sonhos se tornam realidade"
         dataPost="21-07-2024"
-        description="Bem-vindo à solarenga California. Uma terra repleta de longas praias,
-        ondas perfeitas, natureza estonteante e pessoas extremamente bonitas que
-        sabem como"
+        description="Se os seus sonhos não derem certo, Estarei sempre lá para você. Se precisar se esconder, Terá sempre minha mão. Mesmo se o céu desabar, Estarei sempre contigo."
       />
 
       <Divider />
       <CardPost
         img={Floresta}
         alt="foto da floresta"
-        title="Vista de tirar o fôlego no topo da montanha"
+        title="Viva, aproveite, registre!"
         dataPost="26-07-2024"
-        description="Este é o lugar onde o seu texto começa. Pode clicar aqui e começar a digitar. Velit sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem ut enim ad"
+        description="Aproveitar a vida pra mim? Tomar impulso ao caminho do céu. Harmonizar-me com meu irmão. Silenciar e estar em paz comigo. Aproveitar a vida depende do que você ..."
       />
     </div>
   );
