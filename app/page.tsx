@@ -1,3 +1,4 @@
+"use client";
 import clsx from "clsx";
 
 //Assets
@@ -7,10 +8,12 @@ import Floresta from "@/public/assets/img/floresta.jpg";
 //Components
 import Divider from "@/components/divider/divider";
 import CardPost from "@/components/cardpost/cardpost";
+import { useRouter } from "next/navigation";
 
 //Esse bloco será alterado posteriormente para o retorno da API
 const response = [
   {
+    id: 1501,
     img: Menino,
     img_descricao: "menino lendo",
     titulo: "A Terra onde os sonhos se tornam realidade",
@@ -19,6 +22,7 @@ const response = [
       "Se os seus sonhos não derem certo, Estarei sempre lá para você. Se precisar se esconder, Terá sempre minha mão. Mesmo se o céu desabar, Estarei sempre contigo.",
   },
   {
+    id: 1502,
     img: Floresta,
     img_descricao: "foto da floresta",
     titulo: "Viva, aproveite, registre!",
@@ -29,6 +33,8 @@ const response = [
 ];
 
 export default function Home() {
+  const routes = useRouter();
+
   return (
     <div
       className={clsx(
@@ -49,6 +55,7 @@ export default function Home() {
           title={e.titulo}
           dataPost={e.data_post}
           description={e.descricao}
+          handleFunction={() => routes.push(`${e.id}`)}
         />
       ))}
     </div>

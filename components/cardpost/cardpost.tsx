@@ -8,6 +8,7 @@ type Props = {
   title: string;
   dataPost: string;
   description: string;
+  handleFunction: () => void;
 };
 
 export default function CardPost({
@@ -16,10 +17,12 @@ export default function CardPost({
   title,
   dataPost,
   description,
+  handleFunction,
 }: Props) {
   return (
     <>
       <div
+        onClick={() => handleFunction()}
         className={clsx(
           "w-full",
           "flex flex-col items-center justify-center",
