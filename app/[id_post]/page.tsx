@@ -3,10 +3,13 @@
 //React imports
 import { useParams, useRouter } from "next/navigation";
 import Image from "next/image";
-import Divider from "@/components/divider/divider";
 
 //Libs
 import clsx from "clsx";
+
+//Components
+import Divider from "@/components/divider/divider";
+import Navigation from "@/components/navigation/navigation";
 
 //Assets
 import Menino from "@/public/assets/img/menino.jpg";
@@ -22,15 +25,7 @@ export default function Post() {
         "flex-col items-center justify-center"
       )}
     >
-      <nav className={clsx("w-full", "py-6")}>
-        <button
-          className={clsx("italic", "text-neutral-500")}
-          onClick={() => router.back()}
-        >
-          {" "}
-          ⭠ Voltar
-        </button>
-      </nav>
+      <Navigation handleClick={() => router.back()} label="Voltar" />
       <div
         className={clsx("flex flex-col w-full", "items-center justify-center")}
       >
