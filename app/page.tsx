@@ -1,3 +1,4 @@
+"use client";
 import clsx from "clsx";
 
 //Assets
@@ -7,8 +8,33 @@ import Floresta from "@/public/assets/img/floresta.jpg";
 //Components
 import Divider from "@/components/divider/divider";
 import CardPost from "@/components/cardpost/cardpost";
+import { useRouter } from "next/navigation";
+
+//Esse bloco será alterado posteriormente para o retorno da API
+const response = [
+  {
+    id: 1501,
+    img: Menino,
+    img_descricao: "menino lendo",
+    titulo: "A Terra onde os sonhos se tornam realidade",
+    data_post: "21-07-2024",
+    descricao:
+      "Se os seus sonhos não derem certo, Estarei sempre lá para você. Se precisar se esconder, Terá sempre minha mão. Mesmo se o céu desabar, Estarei sempre contigo.",
+  },
+  {
+    id: 1502,
+    img: Floresta,
+    img_descricao: "foto da floresta",
+    titulo: "Viva, aproveite, registre!",
+    data_post: "26-07-2024",
+    descricao:
+      "Aproveitar a vida pra mim? Tomar impulso ao caminho do céu. Harmonizar-me com meu irmão. Silenciar e estar em paz comigo. Aproveitar a vida depende do que você ...",
+  },
+];
 
 export default function Home() {
+  const routes = useRouter();
+
   return (
     <div
       className={clsx(
@@ -21,22 +47,17 @@ export default function Home() {
         <h1 className={clsx("text-4xl", "text-neutral-500")}>Todos os posts</h1>
       </div>
       <Divider />
-      <CardPost
-        img={Menino}
-        alt="menino lendo"
-        title="A Terra onde os sonhos se tornam realidade"
-        dataPost="21-07-2024"
-        description="Se os seus sonhos não derem certo, Estarei sempre lá para você. Se precisar se esconder, Terá sempre minha mão. Mesmo se o céu desabar, Estarei sempre contigo."
-      />
-
-      <Divider />
-      <CardPost
-        img={Floresta}
-        alt="foto da floresta"
-        title="Viva, aproveite, registre!"
-        dataPost="26-07-2024"
-        description="Aproveitar a vida pra mim? Tomar impulso ao caminho do céu. Harmonizar-me com meu irmão. Silenciar e estar em paz comigo. Aproveitar a vida depende do que você ..."
-      />
+      {response.map((e, index) => (
+        <CardPost
+          key={index}
+          img={e.img}
+          alt={e.img_descricao}
+          title={e.titulo}
+          dataPost={e.data_post}
+          description={e.descricao}
+          handleFunction={() => routes.push(`${e.id}`)}
+        />
+      ))}
     </div>
   );
 }
