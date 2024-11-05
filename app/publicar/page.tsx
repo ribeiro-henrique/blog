@@ -29,7 +29,13 @@ export default function Publicar() {
       {/* FORM */}
 
       <form
-        className={clsx("w-full", "px-6", "font-medium", "text-xl")}
+        className={clsx(
+          "w-full",
+          "px-6",
+          "font-medium",
+          "text-xl",
+          "flex flex-col gap-3"
+        )}
         action=""
         method="post"
       >
@@ -42,8 +48,54 @@ export default function Publicar() {
             className={clsx(
               "border-4 border-[#2E69FF25]",
               "rounded-lg",
-              "py-1"
+              "py-1",
+              "text-base"
             )}
+            type="text"
+            id="title"
+            autoComplete="title"
+          />
+        </label>
+        <label
+          className={clsx("flex flex-col", "text-2xl", "text-neutral-600")}
+          htmlFor=""
+        >
+          Mensagem:
+          <textarea
+            className={clsx(
+              "border-4 border-[#2E69FF25]",
+              "rounded-lg",
+              "py-1",
+              "h-96",
+              "text-base"
+            )}
+          />
+        </label>
+        <label
+          className={clsx("flex flex-col", "text-2xl", "text-neutral-600")}
+          htmlFor=""
+        >
+          Imagem:
+          <input
+            className={clsx("text-xs")}
+            type="file"
+            src=""
+            alt=""
+            accept="image/jpeg"
+          />
+        </label>
+        <label
+          className={clsx("flex flex-col", "text-2xl", "text-neutral-600")}
+          htmlFor=""
+        >
+          <input
+            className={clsx(
+              "border-4 border-[#2E69FF25]",
+              "rounded-lg",
+              "py-1 px-1",
+              "text-base"
+            )}
+            placeholder="O que é a imagem?"
             type="text"
             id="title"
             autoComplete="title"
