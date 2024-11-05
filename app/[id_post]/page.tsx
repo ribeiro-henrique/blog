@@ -1,7 +1,7 @@
 "use client";
 
 //React imports
-import { useParams, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 //Libs
 import clsx from "clsx";
@@ -15,8 +15,6 @@ import Menino from "@/public/assets/img/menino.jpg";
 import { useEffect, useState } from "react";
 
 export default function Post() {
-  const { id_post } = useParams();
-
   const router = useRouter();
 
   const [post, setPost] = useState<any>();
