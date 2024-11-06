@@ -3,20 +3,20 @@ import Image, { StaticImageData } from "next/image";
 import Divider from "../divider/divider";
 
 type Props = {
-  img: StaticImageData;
+  imagem: StaticImageData;
   alt: string;
   title: string;
-  dataPost: string;
-  description: string;
+  data: string;
+  conteudo: string;
   handleFunction: () => void;
 };
 
 export default function CardPost({
-  img,
+  imagem,
   alt,
   title,
-  dataPost,
-  description,
+  data,
+  conteudo,
   handleFunction,
 }: Props) {
   return (
@@ -30,7 +30,7 @@ export default function CardPost({
           "gap-4"
         )}
       >
-        <Image src={img} alt={alt} width={360} height={290} />
+        <Image src={imagem} alt={alt} width={360} height={290} />
         <div
           className={clsx(
             "w-full",
@@ -51,8 +51,8 @@ export default function CardPost({
             {title}
           </h1>
         </div>
-        <span className={clsx("text-zinc-400", "italic")}>{dataPost}</span>
-        <p className={clsx("text-zinc-500", "text-center")}>{description}</p>
+        <span className={clsx("text-zinc-400", "italic")}>{data}</span>
+        <p className={clsx("text-zinc-500", "text-center")}>{conteudo}</p>
       </div>
       <Divider />
     </>

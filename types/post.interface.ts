@@ -2,9 +2,9 @@ import { StaticImageData } from "next/image";
 
 export interface Post {
   id: number;
-  img: StaticImageData;
-  img_descricao: string;
+  imagem: StaticImageData;
+  alt: string;
   titulo: string;
-  data_post: string;
-  descricao: string;
+  data: string;
+  conteudo: string;
 }

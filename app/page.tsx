@@ -36,11 +36,11 @@ export default function Home() {
       {posts.map((e, index) => (
         <CardPost
           key={index}
-          img={e.img}
-          alt={e.img_descricao}
+          imagem={e.imagem}
+          alt={e.alt}
           title={e.titulo}
-          dataPost={e.data_post}
-          description={e.descricao}
+          data={e.data}
+          conteudo={e.conteudo}
           handleFunction={() => routes.push(`${e.id}`)}
         />
       ))}
