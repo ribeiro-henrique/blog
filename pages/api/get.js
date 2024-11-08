@@ -1,14 +1,8 @@
-// pages/api/get.js
-import fs from "fs";
-import path from "path";
+import { PrismaClient } from "@prisma/client";
+const prisma = new PrismaClient();
 
-export default function fetchPosts(req, res) {
-  const filePath = path.join(process.cwd(), "data.json");
+export default async function fetchPosts(req, res) {
+  const posts = await prisma.post.findMany();
 
-  const fileContents = fs.existsSync(filePath)
-    ? fs.readFileSync(filePath, "utf8")
-    : "[]";
-  const data = JSON.parse(fileContents);
-
-  res.status(200).json({ message: "ok", data });
+  res.status(200).json({ message: "ok", posts });
 }

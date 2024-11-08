@@ -14,8 +14,9 @@ export default function Home() {
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch("/api/get");
+
       const data = await response.json();
-      setPosts(data.data);
+      setPosts(data.posts);
     };
 
     fetchData();
@@ -33,7 +34,7 @@ export default function Home() {
         <h1 className={clsx("text-4xl", "text-neutral-500")}>Todos os posts</h1>
       </div>
       <Divider />
-      {posts.map((e, index) => (
+      {posts?.map((e, index) => (
         <CardPost
           key={index}
           imagem={e.imagem}
