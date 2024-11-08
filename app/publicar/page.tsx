@@ -2,8 +2,12 @@
 
 import clsx from "clsx";
 import { useEffect, useState } from "react";
+import Swal from "sweetalert2";
+import { useRouter } from "next/navigation";
 
 export default function Publicar() {
+  const routes = useRouter();
+
   const [imageBase64, setImageBase64] = useState<any>("");
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -56,6 +60,16 @@ export default function Publicar() {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
+    }).then(() => {
+      Swal.fire({
+        position: "center-end",
+        icon: "success",
+        title: "Pronto, pai!",
+        showConfirmButton: false,
+        timer: 3200,
+      }).then(() => {
+        routes.push("/");
+      });
     });
   };
 
@@ -149,7 +163,7 @@ export default function Publicar() {
           <input
             className={clsx("text-xs")}
             type="file"
-            accept="image/jpeg"
+            accept="image/jpeg, image/png, image/svg"
             onChange={handleImage}
           />
         </label>
@@ -171,7 +185,17 @@ export default function Publicar() {
           />
         </label>
       </form>
-      <button onClick={() => handleSubmit()}>ENVIAR</button>
+      <button
+        className={clsx(
+          "bg-[#424242]",
+          "text-[#d8c4a6]",
+          "px-4 py-1 rounded-md",
+          "mt-6"
+        )}
+        onClick={() => handleSubmit()}
+      >
+        ENVIAR
+      </button>
     </main>
   );
 }
