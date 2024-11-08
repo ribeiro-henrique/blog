@@ -52,7 +52,9 @@ export default function CardPost({
           </h1>
         </div>
         <span className={clsx("text-zinc-400", "italic")}>{data}</span>
-        <p className={clsx("text-zinc-500", "text-center")}>{conteudo}</p>
+        <p className={clsx("text-zinc-500", "text-center", "line-clamp-4")}>
+          {conteudo}
+        </p>
       </div>
       <Divider />
     </>
