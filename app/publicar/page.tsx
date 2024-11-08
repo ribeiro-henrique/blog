@@ -66,7 +66,7 @@ export default function Publicar() {
         icon: "success",
         title: "Pronto, pai!",
         showConfirmButton: false,
-        timer: 1500,
+        timer: 3200,
       }).then(() => {
         routes.push("/");
       });

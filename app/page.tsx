@@ -16,7 +16,7 @@ export default function Home() {
       const response = await fetch("/api/get");
 
       const data = await response.json();
-      setPosts(data.posts);
+      setPosts(data?.posts);
     };
 
     fetchData();
@@ -37,11 +37,11 @@ export default function Home() {
       {posts?.map((e, index) => (
         <CardPost
           key={index}
-          imagem={e.imagem}
-          alt={e.alt}
-          title={e.titulo}
-          data={e.data}
-          conteudo={e.conteudo}
+          imagem={e?.imagem}
+          alt={e?.alt}
+          title={e?.titulo}
+          data={e?.data}
+          conteudo={e?.conteudo}
           handleFunction={() => routes.push(`${e.id}`)}
         />
       ))}
